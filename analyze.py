@@ -89,27 +89,27 @@ for trial in order_data:
         if trial in aoi_hit:
             if "target" in aoi_hit:
                 if trial.split("_")[-1] == "R":
-                    info[trial]["Right prop"] = round(props[i], 6)
+                    info[trial]["Right prop"] = round(float(props[i]), 6)
                     info[trial]["Right Frames/Time"] = str(frames[i]) + " / " + str(round(times[i], 2))
                 else:
-                    info[trial]["Left prop"] = round(props[i], 6)
+                    info[trial]["Left prop"] = round(float(props[i]), 6)
                     info[trial]["Left Frames/Time"] = str(frames[i]) + " / " + str(round(times[i], 2))
             elif "distractor" in aoi_hit:
                 if trial.split("_")[-1] == "R":
-                    info[trial]["Left prop"] = round(props[i], 6)
+                    info[trial]["Left prop"] = round(float(props[i]), 6)
                     info[trial]["Left Frames/Time"] = str(frames[i]) + " / " + str(round(times[i], 2))
                 else:
-                    info[trial]["Right prop"] = round(props[i], 6)
+                    info[trial]["Right prop"] = round(float(props[i]), 6)
                     info[trial]["Right Frames/Time"] = str(frames[i]) + " / " + str(round(times[i], 2))
             elif "BASELINE" in aoi_hit:
                 aoi_hit_sides = aoi_hit.split("[")[1].split("_")[0].split("-")
                 sides = {aoi_hit_sides[0]: "left", aoi_hit_sides[1]: "right"}
                 additional = aoi_hit.split()[-1][:-1]
                 if sides[additional] == "left":
-                    info[trial]["Left prop"] = round(props[i], 6)
+                    info[trial]["Left prop"] = round(float(props[i]), 6)
                     info[trial]["Left Frames/Time"] = str(frames[i]) + " / " + str(round(times[i], 2))
                 else:
-                    info[trial]["Right prop"] = round(props[i], 6)
+                    info[trial]["Right prop"] = round(float(props[i]), 6)
                     info[trial]["Right Frames/Time"] = str(frames[i]) + " / " + str(round(times[i], 2))
 # make information into data frames
 left_ft = []
